@@ -1,8 +1,8 @@
 # Giorgio by Autotelic
 
-<img src="https://giorgiobm.com/icon-512.png" width="72" height="72" alt="Giorgio">
+<img src="https://giorgiobm.com/icon-512.png?v=restored-20261022" width="72" height="72" alt="Giorgio">
 
-**Ideas in motion. / Ideias em movimento.**
+
 
 AI for research, coding, and everyday project work.
 
@@ -10,13 +10,19 @@ AI for research, coding, and everyday project work.
 
 Giorgio brings together conversations, research, coding, and project context. Its Code workspace focuses on programming tasks, while Learn provides publicly readable educational material about AI systems.
 
-## Three paths to get started
+## Where to start
 
 - **Investigate:** research a question and check original sources. [Research guide](https://giorgiobm.com/guides/pesquisar-com-fontes).
 - **Build:** describe a reproducible coding problem and verify the change. [Coding guide](https://giorgiobm.com/guides/programar-com-ia).
 - **Organize:** keep the goals, files, and instructions of a project together. [Project documentation](https://giorgiobm.com/docs/projects).
 
 Product features, access requirements, and limits vary by plan and selected option. Check the [current plans](https://giorgiobm.com/plans) and [AI transparency page](https://giorgiobm.com/ai-transparency). AI-generated responses can contain mistakes; verify sources and code.
+
+## Articles
+
+- [Getting started with Giorgio](https://giorgiobm.com/blog/como-comecar-no-giorgio) — Portuguese, with language options on the site.
+- [How agents can read the public pages](https://giorgiobm.com/blog/como-agentes-leem-o-giorgio).
+- [Serving HTML and Markdown from one public URL](https://dev.to/rodrigg19/serving-html-and-markdown-from-one-public-url-2k0c) — technical article in English, with AI disclosure.
 
 ## Public discovery for agents
 
@@ -38,7 +44,7 @@ import json
 from urllib.request import Request, urlopen
 
 request = Request("https://giorgiobm.com/api/public/site",
-                  headers={"Accept": "application/json"})
+                  headers={"Accept": "application/json", "User-Agent": "GiorgioPublicReader/1.0"})
 with urlopen(request, timeout=30) as response:
     site = json.load(response)
 print(site["name"], site["description"])
